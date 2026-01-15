@@ -32,10 +32,10 @@ const App: React.FC = () => {
       {/* Scrollable Content Wrapper */}
       <div className="relative z-10 w-full max-w-[1920px] mx-auto flex flex-col">
         
-        {/* Section 1: Main Dashboard (Fixed Height 900px) */}
+        {/* Section 1: Main Dashboard */}
         <div className="flex flex-col p-4 md:p-6 lg:px-12 lg:py-8 gap-8">
             <Header />
-            <div className="w-full h-[900px] flex flex-col">
+            <div className="w-full flex flex-col">
                 <DashboardFrame />
             </div>
         </div>

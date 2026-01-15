@@ -2,9 +2,9 @@ import React from 'react';
 
 export const DashboardFrame: React.FC = () => {
   return (
-    <div className="relative w-full h-full rounded-3xl overflow-hidden glass-panel transition-all duration-700 hover:border-primary/30 flex flex-col">
+    <div className="relative w-full rounded-3xl overflow-hidden glass-panel transition-all duration-700 hover:border-primary/30 flex flex-col">
       {/* Mac-like Window Header */}
-      <div className="absolute top-0 left-0 right-0 h-12 bg-white/[0.02] border-b border-white/[0.05] flex items-center px-6 gap-3 z-20 backdrop-blur-md shrink-0">
+      <div className="w-full h-12 bg-white/[0.02] border-b border-white/[0.05] flex items-center px-6 gap-3 z-20 backdrop-blur-md shrink-0">
         <div className="flex gap-2">
           <div className="w-3 h-3 rounded-full bg-red-500/20 border border-red-500/30"></div>
           <div className="w-3 h-3 rounded-full bg-yellow-500/20 border border-yellow-500/30"></div>
@@ -22,10 +22,11 @@ export const DashboardFrame: React.FC = () => {
       </div>
 
       {/* Main Dashboard Content - Iframe */}
-      <div className="flex-1 w-full h-full pt-12 bg-white/[0.01]">
-        <iframe 
-            src="https://railpulse.netlify.app" 
-            className="w-full h-full border-none"
+      <div className="w-full bg-white/[0.01]">
+        <iframe
+            src="https://railpulse.netlify.app"
+            className="w-full border-none"
+            style={{ minHeight: '600px', height: '100vh' }}
             title="RailPulse Enterprise Network Overview"
             allow="fullscreen; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
