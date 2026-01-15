@@ -2,7 +2,7 @@ import React from 'react';
 
 export const SituationalAwarenessSection: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center w-full px-6 py-12 md:px-12 lg:px-16 relative">
+    <div className="flex flex-col items-center justify-center w-full px-6 py-16 md:px-12 lg:px-16 relative">
       <div className="max-w-[1920px] w-full flex flex-col gap-8 relative z-10">
         
         {/* Title */}

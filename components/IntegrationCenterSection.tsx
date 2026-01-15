@@ -2,7 +2,7 @@ import React from 'react';
 
 export const IntegrationCenterSection: React.FC = () => {
   return (
-    <div className="relative min-h-screen w-full flex flex-col items-center justify-center px-6 md:px-12 lg:px-20 py-12 overflow-hidden">
+    <div className="relative min-h-screen w-full flex flex-col items-center justify-center px-6 md:px-12 lg:px-20 py-16 overflow-hidden">
       
       <div className="relative z-10 flex flex-col h-full w-full max-w-[1920px]">
         {/* Header */}
@@ -121,4 +121,75 @@ export const IntegrationCenterSection: React.FC = () => {
                                 <div className="w-1/5 bg-white/10 rounded-t-sm h-[40%]"></div>
                                 <div className="w-1/5 bg-white/10 rounded-t-sm h-[70%]"></div>
                                 <div className="w-1/5 bg-primary-blue/80 rounded-t-sm h-[100%]"></div>
-                                <div className="w-1/5 bg-white
+                                <div className="w-1/5 bg-primary-blue/60 rounded-t-sm h-[85%]"></div>
+                                <div className="w-1/5 bg-white/20 rounded-t-sm h-[55%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Card 2 */}
+                <div className="glass-card-integration p-1 rounded-xl group hover:scale-[1.02] transition-transform duration-300">
+                    <div className="bg-black/20 p-5 rounded-lg flex gap-4 items-start">
+                        <div className="w-12 h-12 rounded-lg bg-amber-500/20 flex items-center justify-center shrink-0 border border-amber-500/30 text-amber-400">
+                            <span className="material-symbols-outlined">schedule</span>
+                        </div>
+                        <div className="flex-1">
+                            <div className="flex justify-between items-start mb-1">
+                                <h4 className="text-white font-semibold">TDI Scheduler</h4>
+                                <span className="w-2 h-2 rounded-full bg-green-500 mt-1.5"></span>
+                            </div>
+                            <p className="text-xs text-white/50 mb-3">Real-time Workforce Management</p>
+                            <div className="flex items-end gap-1 h-8 mt-2">
+                                <div className="w-1/5 bg-white/10 rounded-t-sm h-[60%]"></div>
+                                <div className="w-1/5 bg-white/10 rounded-t-sm h-[80%]"></div>
+                                <div className="w-1/5 bg-amber-500/60 rounded-t-sm h-[100%]"></div>
+                                <div className="w-1/5 bg-amber-500/40 rounded-t-sm h-[90%]"></div>
+                                <div className="w-1/5 bg-white/20 rounded-t-sm h-[70%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Card 3 */}
+                <div className="glass-card-integration p-1 rounded-xl group hover:scale-[1.02] transition-transform duration-300">
+                    <div className="bg-black/20 p-5 rounded-lg flex gap-4 items-start">
+                        <div className="w-12 h-12 rounded-lg bg-emerald-500/20 flex items-center justify-center shrink-0 border border-emerald-500/30 text-emerald-400">
+                            <span className="material-symbols-outlined">traffic</span>
+                        </div>
+                        <div className="flex-1">
+                            <div className="flex justify-between items-start mb-1">
+                                <h4 className="text-white font-semibold">Traffic Control</h4>
+                                <span className="w-2 h-2 rounded-full bg-yellow-500 mt-1.5 animate-pulse"></span>
+                            </div>
+                            <p className="text-xs text-white/50 mb-3">Signals & Block Management</p>
+                            <div className="flex items-end gap-1 h-8 mt-2">
+                                <div className="w-1/5 bg-white/10 rounded-t-sm h-[50%]"></div>
+                                <div className="w-1/5 bg-emerald-500/60 rounded-t-sm h-[100%]"></div>
+                                <div className="w-1/5 bg-emerald-500/80 rounded-t-sm h-[95%]"></div>
+                                <div className="w-1/5 bg-white/10 rounded-t-sm h-[45%]"></div>
+                                <div className="w-1/5 bg-white/10 rounded-t-sm h-[60%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        {/* Footer Navigation */}
+        <footer className="flex justify-between items-center mt-8 pt-6 border-t border-white/10">
+            <button className="flex items-center gap-2 text-white/60 hover:text-white transition-colors px-4 py-2 rounded-lg hover:bg-white/5">
+                <span className="material-symbols-outlined text-[20px]">chevron_left</span>
+                <span className="font-medium">Previous: Station Operations</span>
+            </button>
+            <button className="flex items-center gap-2 text-primary-blue hover:text-primary-blue/80 transition-colors px-4 py-2 rounded-lg hover:bg-primary-blue/5">
+                <span className="font-medium">Next: Reflective Summary</span>
+                <span className="material-symbols-outlined text-[20px]">chevron_right</span>
+            </button>
+        </footer>
+      </div>
+    </div>
+  );
+};
+
+export default IntegrationCenterSection;

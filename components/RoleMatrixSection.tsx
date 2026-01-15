@@ -2,7 +2,7 @@ import React from 'react';
 
 export const RoleMatrixSection: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center w-full px-6 py-12 md:px-12 lg:px-16 lg:py-24">
+    <div className="flex flex-col items-center justify-center w-full px-6 py-16 md:px-12 lg:px-16 lg:py-24">
       <div className="max-w-[1920px] w-full flex flex-col gap-12">
         <section className="flex flex-col gap-6 items-start max-w-4xl">
           <div className="inline-flex items-center gap-2 rounded-lg bg-primary/5 border border-primary/20 pl-2 pr-4 py-1.5 self-start">

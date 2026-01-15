@@ -1,8 +1,9 @@
 import React from 'react';
+import generatedImage from '../Gemini_Generated_Image_vbefi6vbefi6vbef.png';
 
 export const IncidentReplaySection: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center w-full px-6 py-12 md:px-12 lg:px-16 relative overflow-hidden">
+    <div className="flex flex-col items-center justify-center w-full px-6 py-16 md:px-12 lg:px-16 relative overflow-hidden">
       
       <div className="max-w-[1920px] w-full flex flex-col gap-6 relative z-10">
         
@@ -41,7 +42,7 @@ export const IncidentReplaySection: React.FC = () => {
             {/* Center Stage: Digital Twin / Map Visualization */}
             <section className="lg:col-span-9 relative rounded-2xl overflow-hidden border border-white/10 group bg-white/[0.02] min-h-[500px]">
                 {/* Background Map */}
-                <div className="absolute inset-0 bg-cover bg-center opacity-80" style={{ backgroundImage: 'url("https://placeholder.pics/svg/300")', filter: 'contrast(1.2) brightness(0.6) hue-rotate(10deg)' }}></div>
+                <div className="absolute inset-0 bg-cover bg-center opacity-90" style={{ backgroundImage: `url(${generatedImage})`, filter: 'contrast(1.1) brightness(0.45) hue-rotate(5deg)' }}></div>
                 {/* Map Overlay Gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20"></div>
                 

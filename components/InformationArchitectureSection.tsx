@@ -2,7 +2,7 @@ import React from 'react';
 
 export const InformationArchitectureSection: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center w-full px-6 py-12 md:px-12 lg:px-16 relative">
+    <div className="flex flex-col items-center justify-center w-full px-6 py-16 md:px-12 lg:px-16 relative">
       <div className="ambient-glow top-[-200px] left-[-200px]"></div>
       <div className="ambient-glow bottom-[-200px] right-[-100px]" style={{ background: 'radial-gradient(circle, rgba(34, 211, 238, 0.1) 0%, transparent 70%)' }}></div>
       

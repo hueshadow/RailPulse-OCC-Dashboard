@@ -2,7 +2,7 @@ import React from 'react';
 
 export const MultiTerminalSection: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center w-full px-6 py-12 md:px-12 lg:px-16 relative overflow-hidden">
+    <div className="flex flex-col items-center justify-center w-full px-6 py-16 md:px-12 lg:px-16 relative overflow-hidden">
       <div className="max-w-[1920px] w-full relative flex flex-col justify-center">
         <div className="grid grid-cols-12 gap-10 items-center">
           
@@ -13,10 +13,10 @@ export const MultiTerminalSection: React.FC = () => {
                 <p className="text-primary text-sm font-medium leading-normal">洞察：利用分布式技术实现指挥中心与现场的高效即时协同。</p>
             </div>
             <h1 className="glass-terminal px-10 py-6 rounded-[3rem] w-fit relative z-10 text-white text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tighter mb-8 whitespace-nowrap font-bold-zh">
-                12 多端协同与 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">HarmonyOS</span> 现场应用
+                12 多端协同与现场应用
             </h1>
             <p className="text-slate-400 text-lg md:text-xl leading-relaxed max-w-3xl mb-10">
-                HarmonyOS distributed technology bridges the gap between the Control Center and field personnel with millisecond-level collaboration, ensuring data consistency and real-time response.
+                Distributed technology bridges the gap between the Control Center and field personnel with millisecond-level collaboration, ensuring data consistency and real-time response.
             </p>
             <div className="space-y-4">
               <div className="flex items-center gap-4 p-4 rounded-xl glass-card-terminal">

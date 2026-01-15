@@ -2,7 +2,7 @@ import React from 'react';
 
 export const EmergencyResponseSection: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center w-full px-6 py-12 md:px-12 lg:px-16">
+    <div className="flex flex-col items-center justify-center w-full px-6 py-16 md:px-12 lg:px-16">
       <div className="max-w-[1920px] w-full flex flex-col gap-10 relative">
         {/* Background blobs for this section */}
         <div className="absolute top-20 left-10 w-96 h-96 bg-cyan-900/20 rounded-full blur-3xl -z-10 pointer-events-none"></div>
@@ -140,10 +140,13 @@ export const EmergencyResponseSection: React.FC = () => {
 
                 {/* SVG Connections */}
                 <div className="absolute inset-0 ml-32 flex items-center justify-center">
-                    <svg className="w-full h-full absolute inset-0 pointer-events-none" preserveAspectRatio="none" viewBox="0 0 1400 600">
+                    <svg className="w-full h-full absolute inset-0 pointer-events-none" preserveAspectRatio="none" viewBox="0 0 1400 650">
                         <defs>
                             <marker id="arrowhead" markerHeight="7" markerWidth="10" orient="auto" refX="9" refY="3.5">
                                 <polygon fill="#22d3ee" points="0 0, 10 3.5, 0 7"></polygon>
+                            </marker>
+                            <marker id="arrowhead-gray" markerHeight="7" markerWidth="10" orient="auto" refX="9" refY="3.5">
+                                <polygon fill="#64748b" points="0 0, 10 3.5, 0 7"></polygon>
                             </marker>
                             <filter id="glow">
                                 <feGaussianBlur result="coloredBlur" stdDeviation="2.5"></feGaussianBlur>
@@ -153,37 +156,52 @@ export const EmergencyResponseSection: React.FC = () => {
                                 </feMerge>
                             </filter>
                         </defs>
-                        <path d="M 150 80 L 300 80 L 300 220 L 400 220" fill="none" filter="url(#glow)" markerEnd="url(#arrowhead)" opacity="0.8" stroke="#22d3ee" strokeWidth="2"></path>
-                        <path d="M 600 220 L 700 220 L 700 80 L 800 80" fill="none" markerEnd="url(#arrowhead)" stroke="#64748b" strokeDasharray="5,5" strokeWidth="2"></path>
-                        <path d="M 1000 80 L 1050 80 L 1050 380 L 1150 380" fill="none" filter="url(#glow)" markerEnd="url(#arrowhead)" opacity="0.8" stroke="#22d3ee" strokeWidth="2"></path>
-                        <path d="M 1350 380 L 1380 380 L 1380 520 L 1400 520" fill="none" markerEnd="url(#arrowhead)" stroke="#64748b" strokeWidth="2"></path>
-                        <path d="M 1250 520 C 1350 520, 1350 80, 1100 80" fill="none" filter="url(#glow)" opacity="0.5" stroke="#22d3ee" strokeDasharray="8,4" strokeWidth="2"></path>
+                        {/* Signal Loss (5%, 10%) -> Manual Review (25%, 32%) */}
+                         {/* N1 Right (270, 90) -> N2 Left (350, 258) */}
+                        <path d="M 270 90 L 310 90 L 310 258 L 350 258" fill="none" filter="url(#glow)" markerEnd="url(#arrowhead)" opacity="0.8" stroke="#22d3ee" strokeWidth="2"></path>
+                        
+                        {/* Manual Review (25%, 32%) -> Auto Dispatch (55%, 10%) */}
+                        {/* N2 Right (570, 258) -> N3 Left (770, 90) */}
+                        <path d="M 570 258 L 670 258 L 670 90 L 770 90" fill="none" markerEnd="url(#arrowhead-gray)" stroke="#64748b" strokeDasharray="5,5" strokeWidth="2"></path>
+                        
+                        {/* Auto Dispatch (55%, 10%) -> Team Deploy (75%, 60%) */}
+                        {/* N3 Right (970, 90) -> N4 Left (1050, 440) */}
+                        <path d="M 970 90 L 1010 90 L 1010 440 L 1050 440" fill="none" filter="url(#glow)" markerEnd="url(#arrowhead)" opacity="0.8" stroke="#22d3ee" strokeWidth="2"></path>
+                        
+                        {/* Team Deploy (75%, 60%) -> Update Threshold (Right 5%, 82%) */}
+                        {/* N4 Bottom (1160, 490) -> N5 Top (1240, 533) */}
+                        <path d="M 1160 490 L 1160 515 L 1240 515 L 1240 533" fill="none" markerEnd="url(#arrowhead-gray)" stroke="#64748b" strokeWidth="2"></path>
+                        
+                        {/* Loop back: Review -> Monitor or N5 -> N3 */}
+                        {/* N5 Right (1330, 558) -> N3 Top/Right? Let's aim for N3 Top (870, 65) or Right (970, 90) */}
+                        {/* Curve from N5 Right loop back to N3 top */}
+                        <path d="M 1340 558 C 1420 558, 1420 40, 870 50" fill="none" filter="url(#glow)" opacity="0.5" stroke="#22d3ee" markerEnd="url(#arrowhead)" strokeDasharray="8,4" strokeWidth="2"></path>
                     </svg>
 
                     {/* Nodes */}
-                    <div className="absolute top-[10%] left-[5%] bg-cyan-950/40 backdrop-blur-md border border-cyan-500/50 text-cyan-200 px-6 py-3 rounded-lg text-sm flex items-center gap-3 transform -translate-y-1/2">
+                    <div className="absolute top-[10%] left-[5%] bg-cyan-950/40 backdrop-blur-md border border-cyan-500/50 text-cyan-200 px-6 py-3 rounded-lg text-sm flex items-center gap-3">
                         <span className="material-symbols-outlined text-[20px] text-cyan-400">sensors</span> <span className="font-bold-zh font-bold">信号丢失 #402</span>
                     </div>
 
-                    <div className="absolute top-[35%] left-[25%] bg-slate-800/60 border border-white/10 text-white px-5 py-4 rounded-lg text-sm backdrop-blur-xl w-[220px] transform -translate-y-1/2">
+                    <div className="absolute top-[32%] left-[25%] bg-slate-800/60 border border-white/10 text-white px-5 py-4 rounded-lg text-sm backdrop-blur-xl w-[220px]">
                         <div className="flex items-center gap-2 mb-2 text-xs text-purple-300 font-bold uppercase">
                             <span className="material-symbols-outlined text-[16px]">visibility</span> <span className="font-bold-zh">人工核查</span>
                         </div>
                         <p className="text-xs text-slate-300 font-bold-zh">调度员通过CCTV-04确认阻塞情况。</p>
                     </div>
 
-                    <div className="absolute top-[10%] left-[55%] bg-cyan-950/40 backdrop-blur-md border border-cyan-500/50 text-cyan-200 px-6 py-3 rounded-lg text-sm flex items-center gap-3 transform -translate-y-1/2">
+                    <div className="absolute top-[10%] left-[55%] bg-cyan-950/40 backdrop-blur-md border border-cyan-500/50 text-cyan-200 px-6 py-3 rounded-lg text-sm flex items-center gap-3">
                         <span className="material-symbols-outlined text-[20px] text-cyan-400">smart_toy</span> <span className="font-bold-zh font-bold">自动调度逻辑</span>
                     </div>
 
-                    <div className="absolute top-[60%] left-[75%] bg-slate-800/60 border border-white/10 text-white px-5 py-4 rounded-lg text-sm backdrop-blur-xl w-[220px] transform -translate-y-1/2">
+                    <div className="absolute top-[60%] left-[75%] bg-slate-800/60 border border-white/10 text-white px-5 py-4 rounded-lg text-sm backdrop-blur-xl w-[220px]">
                         <div className="flex items-center gap-2 mb-2 text-xs text-orange-300 font-bold uppercase">
                             <span className="material-symbols-outlined text-[16px]">engineering</span> <span className="font-bold-zh">团队部署</span>
                         </div>
                         <p className="text-xs text-slate-300 font-bold-zh">42单元已到位。预计修复：15分钟。</p>
                     </div>
 
-                    <div className="absolute top-[85%] right-[5%] bg-emerald-900/40 backdrop-blur-md border border-emerald-500/40 text-emerald-100 px-6 py-3 rounded-lg text-sm flex items-center gap-3 transform -translate-y-1/2">
+                    <div className="absolute top-[82%] right-[5%] bg-emerald-900/40 backdrop-blur-md border border-emerald-500/40 text-emerald-100 px-6 py-3 rounded-lg text-sm flex items-center gap-3">
                         <span className="material-symbols-outlined text-[20px] text-emerald-400">edit_note</span> <span className="font-bold-zh font-bold">更新阈值</span>
                     </div>
                 </div>

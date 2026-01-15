@@ -2,7 +2,7 @@ import React from 'react';
 
 export const ReflectiveSummarySection: React.FC = () => {
   return (
-    <div className="relative min-h-screen w-full flex flex-col items-center justify-center px-6 md:px-12 lg:px-16 py-12 overflow-hidden">
+    <div className="relative min-h-screen w-full flex flex-col items-center justify-center px-6 md:px-12 lg:px-16 py-16 overflow-hidden">
       {/* Background Decorative Elements Removed */}
       
       <div className="relative z-10 w-full max-w-[1280px] flex flex-col gap-16">
